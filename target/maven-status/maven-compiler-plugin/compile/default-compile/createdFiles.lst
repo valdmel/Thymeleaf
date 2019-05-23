@@ -1,0 +1,6 @@
+com\bla\entrega\service\PessoaService.class
+com\bla\entrega\controller\PessoaController.class
+com\bla\entrega\repository\PessoaRepository.class
+com\bla\entrega\ThymeleafApplication.class
+com\bla\entrega\service\PessoaServiceImpl.class
+com\bla\entrega\model\Pessoa.class
