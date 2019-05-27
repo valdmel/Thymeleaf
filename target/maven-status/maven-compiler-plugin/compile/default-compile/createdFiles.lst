@@ -1,6 +1,6 @@
-com\bla\entrega\service\PessoaService.class
-com\bla\entrega\controller\PessoaController.class
-com\bla\entrega\repository\PessoaRepository.class
-com\bla\entrega\ThymeleafApplication.class
-com\bla\entrega\service\PessoaServiceImpl.class
-com\bla\entrega\model\Pessoa.class
+com\example\Thymeleaf\Model\Pessoa.class
+com\example\Thymeleaf\Repositories\PessoaRepository.class
+com\example\Thymeleaf\Services\PessoaService.class
+com\example\Thymeleaf\Controller\PessoaController.class
+com\example\Thymeleaf\Services\PessoaServiceImpl.class
+com\example\Thymeleaf\ThymeleafApplication.class

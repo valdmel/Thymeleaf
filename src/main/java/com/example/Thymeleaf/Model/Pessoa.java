@@ -1,4 +1,4 @@
-package com.bla.entrega.model;
+package com.example.Thymeleaf.Model;
 
 import java.io.Serializable;
 

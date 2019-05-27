@@ -1,6 +1,6 @@
-package com.bla.entrega.service;
+package com.example.Thymeleaf.Services;
 
-import com.bla.entrega.model.Pessoa;
+import com.example.Thymeleaf.Model.Pessoa;
 import java.util.List;
 import org.springframework.stereotype.Service;
 

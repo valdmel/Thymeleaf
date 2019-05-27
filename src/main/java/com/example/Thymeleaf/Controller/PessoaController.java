@@ -1,14 +1,12 @@
-package com.bla.entrega.controller;
+package com.example.Thymeleaf.Controller;
 
-import com.bla.entrega.model.Pessoa;
-import com.bla.entrega.service.PessoaService;
+import com.example.Thymeleaf.Model.Pessoa;
+import com.example.Thymeleaf.Services.PessoaService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -26,6 +24,15 @@ public class PessoaController
         return mv;
     }
     
+    @GetMapping("/update/{id}")
+    public ModelAndView updatePessoa(@PathVariable("id") Integer id)
+    {
+        ModelAndView mv = new ModelAndView("/pessoaUPD");
+        mv.addObject("pessoa", pessoaService.findPessoaById(id));
+        
+        return mv;
+    }
+    
     @GetMapping("/")
     public ModelAndView findAllPessoas()
     {
@@ -33,12 +40,6 @@ public class PessoaController
         mv.addObject("pessoas", pessoaService.findAllPessoas());
         
         return mv;
-    }
-	
-    @GetMapping("/update/{id}")
-    public ModelAndView updatePessoa(@PathVariable("id") Integer id)
-    {
-        return createPessoa(pessoaService.findPessoaById(id));
     }
 	
     @GetMapping("/delete/{id}")
@@ -50,15 +51,28 @@ public class PessoaController
     }
 
     @PostMapping("/save")
-    public ModelAndView savePessoa(@Valid Pessoa pessoa, BindingResult result)
+    public ModelAndView save(@Valid Pessoa pessoa, BindingResult result)
     {
         if (result.hasErrors())
         {
             return createPessoa(pessoa);
         }
-
+        
         pessoaService.createPessoa(pessoa);
 
+        return findAllPessoas();
+    }
+    
+    @PostMapping("/update")
+    public ModelAndView update(@Valid Pessoa pessoa, BindingResult result)
+    {
+        if (result.hasErrors())
+        {
+            return createPessoa(pessoa);
+        }
+        
+        pessoaService.updatePessoa(pessoa);
+        
         return findAllPessoas();
     }
 }

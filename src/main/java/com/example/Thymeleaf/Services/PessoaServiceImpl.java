@@ -1,7 +1,7 @@
-package com.bla.entrega.service;
+package com.example.Thymeleaf.Services;
 
-import com.bla.entrega.model.Pessoa;
-import com.bla.entrega.repository.PessoaRepository;
+import com.example.Thymeleaf.Model.Pessoa;
+import com.example.Thymeleaf.Repositories.PessoaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +33,9 @@ public class PessoaServiceImpl implements PessoaService
     @Override
     public Pessoa updatePessoa(Pessoa pessoa)
     {
-        return null;
+        pessoaRepository.save(pessoa);
+        
+        return pessoaRepository.findById(pessoa.getId()).get();
     }
 
     @Override

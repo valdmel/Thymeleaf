@@ -5,15 +5,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.1.5.RELEASE</version>
+        <relativePath/>
     </parent>
         
-    <groupId>com.bla</groupId>
-    <artifactId>entrega</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>Thymeleaf</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>entrega</name>
-    <description>Entrega 1 spring + thymeleaf + sql</description>
+    <name>Thymeleaf</name>
+    <description>Spring MVC + Thymeleaf + SQL + Hibernate</description>
 
     <properties>
         <java.version>1.8</java.version>
